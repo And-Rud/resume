@@ -1,0 +1,137 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  {{#with person}}
+    <main>
+      <div>
+        {{> title data='Person'}}
+        {{name}}
+        ({{age}},
+        {{gender}})
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div>
+        {{> title data='Address'}}
+        {{#with address}}
+          {{street}},
+          {{city}}, state
+          {{state}}, zip
+          {{zip}},
+          {{country}}
+        {{/with}}
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div>
+        {{> title data='Education'}}
+        {{#with education}}
+       Degree: {{[0].degree}}, major: {{[0].major}}, university: {{[0].university}}, graduation: {{[0].graduation}}
+         {{/with}}
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div>
+         {{> title data='Work Experience'}}
+         {{#with workExperience}}
+         <ul>
+            <li>
+                {{[0].company}} (company)
+            </li>
+            <li>
+                {{[0].title}} (title)
+            </li>
+            <li>
+                {{[0].startDate}} (start date)
+            </li>
+            <li>
+           <b>Responsibilities:</b> 
+           <ul>
+            <li>{{[0].responsibilities.[0]}}</li>
+            <li>{{[0].responsibilities.[1]}}</li>
+           </ul>
+            </li>
+            <li>
+                {{[0].year_founded}} (year founded)
+            </li>
+             <li>
+                {{[0].industry}} (industry)
+            </li>
+             <li>
+               <b>Employees:</b>
+               <ul>
+                <li>
+                {{[0].employees.[0].name}},  {{[0].employees.[0].position}}, {{[0].employees.[0].department}} (department)
+                </li>
+                <li>
+                    <b>Projects:</b>
+                    <ul>
+                        <li>
+                            {{[0].employees.[0].projects.[0].name}},
+                           {{[0].employees.[0].projects.[0].description}}
+                          (status -  {{[0].employees.[0].projects.[0].status}})
+                            <li>
+                               <b>Teams:</b>
+                                <ul>
+                                    <li>
+                                        {{[0].employees.[0].projects.[0].teams.[0].team_name}}, 
+                                        Leaders - {{[0].employees.[0].projects.[0].teams.[0].team_leader.name}},
+                                        {{[0].employees.[0].projects.[0].teams.[0].team_leader.title}}(title),
+                                        {{[0].employees.[0].projects.[0].teams.[0].team_leader.email}}
+                                    </li>
+                                    <li>
+                                       <b> Team members:</b>
+                                        <ul>
+                                            <li>
+                                                {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].name}},
+                                                {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].title}},
+                                                {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].email}},
+                                                Skills:  {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].skills}}
+                                                <b>Projects: </b>
+                                                <ul>
+                                                    <li>
+                                                       {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].projects.[0].name}},
+                                                        {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].projects.[0].description}}.
+                                                        {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].projects.[0].technologies}} (technologies),
+                                                        <br>
+                                                        <b> Team members:</b>
+                                                        <ul>
+                                                            <li>
+                                                               {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].projects.[0].team_members.[0].name}},
+                                                               {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].projects.[0].team_members.[0].title}}
+                                                            </li>
+                                                            <li>
+                                                               {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].projects.[0].team_members.[1].name}},
+                                                               {{[0].employees.[0].projects.[0].teams.[0].team_members.[0].projects.[0].team_members.[1].title}}
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </li>
+                    </ul>
+                </li>
+               </ul>
+            </li>
+         </ul>
+          {{/with}}
+      </div>
+
+    </main>
+  {{/with}}
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
