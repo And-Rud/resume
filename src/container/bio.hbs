@@ -4,22 +4,152 @@
 }}
 
 <div>
-  <main>
-     {{> title data='Bio' big=true}}
-     <hr>
-    <section>
-        <ul>
-            {{#each educations}}
-                <li>
-                    {{name}}
-                    {{#unless isEnd}} (ще в процесі) {{/unless}}
-                </li>
-            {{/each}}
-        </ul>
-    </section>
+    <main>
+        {{> title data='Bio' big=true}}
+        <hr>
+        <section>
+            <div>
+                {{name}}, {{birthdate}}, {{birthplace}} (birthplace).
+                <br>
+                Death: {{deathdate}}, {{deathplace}}.
+                <br>
+                Nationality: {{nationality}},
+                <br>
+                Occupation: {{occupation}},
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div>
+                <b>Known For:</b>
+                <ul>
+                    {{#each known_for}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div>
+                <b> Education:</b>
+                <ul>
+                    <li>
+                        {{education.[0].degree}} (degree), {{education.[0].field}} (field),
+                        {{education.[0].institution}} (institution), {{education.[0].year}}
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div>
+                <b>Notable publications:</b>
+                <ul>
+                    <li>
+                        {{notable_publications.[0].title}}, {{notable_publications.[0].year}},
+                        {{notable_publications.[0].publisher}} (publisher)
+                    </li>
+                    <li>
+                       {{notable_publications.[1].title}}, {{notable_publications.[1].year}},
+                        {{notable_publications.[1].publisher}} (publisher)
+                    </li>
+                </ul>
+            </div>
+             <br>
+            <hr>
+            <br>
+            <div>
+                <b>Partners:</b>
+                <ul>
+                    <li>
+                        {{partners.[0].name}} ({{partners.[0].relationship}}),
+                        {{partners.[0].years}}
+                    </li>
+                    <li>
+                       {{partners.[1].name}} ({{partners.[1].relationship}}),
+                        {{partners.[1].years}}
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div>
+                <b>Awards:</b>
+                <ul>
+                    <li>
+                        {{awards.[0].title}}, {{awards.[0].year}},
+                        {{awards.[0].description}}
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div>
+                <b>Influences:</b>
+                <ul>
+                     {{#each influences}}
+                    <li>
+                        {{this}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+             <br>
+            <hr>
+            <br>
+            <div>
+                <b>Influenced:</b>
+                <ul>
+                     {{#each influenced}}
+                    <li>
+                        {{this}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+<br>
+            <hr>
+            <br>
+            <div>
+                <b>Quotes:</b>
+                <ul>
+                     {{#each quotes}}
+                    <li>
+                        {{this}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+<br>
+            <hr>
+            <br>
+            <div>
+                <b>Major discoveries:</b>
+                <ul>
+                    <li>
+                        {{major_discoveries.[0].title}}, {{major_discoveries.[0].year}}. {{major_discoveries.[0].description}}
+                    </li>
+                </ul>
+            </div>
+<br>
+            <hr>
+            <br>
+            <div>
+                <b>Contributions:</b>
+                <ul>
+                    <li>
+                        {{contributions.title}}, {{contributions.description}}. {{contributions.year}},{{contributions.field}} (field)
+                    </li>
+                </ul>
+            </div>
 
-    
-  </main>
+        </section>
+
+
+    </main>
 
 </div>
 
