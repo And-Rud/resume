@@ -1,0 +1,104 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    {{#with program}}
+    <section>
+      <div>
+        {{> title data='Program' big= true}}
+      </div>
+      <br>
+      <hr><br>
+      {{#with excursion}}
+      <div>
+        {{> title data='Excursion'}}
+        <ul>
+
+          <li>
+            {{name}} ({{location.city}}, {{location.country}}, {{date}})
+          </li>
+
+        </ul>
+      </div>
+      <br>
+      <hr><br>
+      <div>
+        {{> title data='Program'}}
+        {{#with program}}
+        <ul>
+          <li>
+            {{[0].name}} (type - {{[0].type}}), {{[0].duration}} h.
+            <br> <b> Details: </b>
+            <ul>
+
+              <li>
+                <b>Museum: </b>
+                {{[0].details.museum.name}} ({{[0].details.museum.location.address}},
+                {{[0].details.museum.location.city}}, {{[0].details.museum.location.country}})
+                <ul>
+                  <li>
+                    <b>Exhibits: </b>
+                    {{[0].details.museum.exhibits.[0].name}} {{[0].details.museum.exhibits.[0].artist}}
+                    ({{[0].details.museum.exhibits.[0].description}}) {{#if
+                    [0].details.museum.exhibits.[0].audio_guide}}(audio guide){{/if}}
+                  </li>
+                  <li>
+                    <b>Exhibits: </b>
+                    {{[0].details.museum.exhibits.[1].name}} {{#unless [0].details.museum.exhibits.[1].artist}}(no
+                    artists){{/unless}}
+                    ({{[0].details.museum.exhibits.[1].description}}) {{#if
+                    [0].details.museum.exhibits.[1].audio_guide}}(audio guide){{/if}}
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Guide: </b>
+                {{[0].details.guide.name}} (language - {{[0].details.guide.language}}, rating -
+                {{[0].details.guide.rating}})
+              </li>
+            </ul>
+          </li>
+          <li>
+            {{[1].name}} (type - {{[1].type}}), {{[1].duration}} h.
+            <br> <b> Details: </b>
+            <ul>
+              <li>
+                <b>Venue:</b> {{[1].details.venue.name}} ({{[1].details.venue.location.address}},
+                {{[1].details.venue.location.city}}, {{[1].details.venue.location.country}})
+              </li>
+              <li>
+                <b>Performers:</b>
+                <ul>
+                  <li>
+                    {{[1].details.performers.[0].name}} ({{[1].details.performers.[0].type}})
+                  </li>
+                  <li>
+                    {{[1].details.performers.[1].name}} ({{[1].details.performers.[1].type}})
+                  </li>
+                </ul>
+
+              </li>
+              <li>
+                <b>Guide:</b> {{[1].details.guide.name}} (language - {{[1].details.guide.language}}, rating -
+                {{[1].details.guide.rating}})
+              </li>
+            </ul>
+          </li>
+        </ul>
+        {{/with}}
+      </div>
+      {{/with}}
+    </section>
+
+    {{/with}}
+  </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
