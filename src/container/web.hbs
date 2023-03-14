@@ -1,0 +1,143 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    {{#with web.languages}}
+    <section>
+      <div>
+        {{> title data=[0].name big= true}}
+      </div>
+      <div>
+        <ul>
+          <li>
+            v. {{[0].version}}
+          </li>
+          <li>
+            {{[0].description}}
+          </li>
+          <li>
+            <b>Elements: </b>
+            <ul>
+              <li>
+                <ins>{{[0].elements.[0].name}}</ins> ({{[0].elements.[0].description}})
+                <br><b>Attributes: </b>
+                <ul>
+                  <li>
+                    <ins> {{[0].elements.[0].attributes.[0].name}}</ins>
+                    ({{[0].elements.[0].attributes.[0].description}})
+                  </li>
+                  <li>
+                    <ins> {{[0].elements.[0].attributes.[1].name}}</ins>
+                    ({{[0].elements.[0].attributes.[1].description}})
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <br>
+      <hr><br>
+      <div>
+        {{> title data=[1].name big= true}}
+      </div>
+      <div>
+        <ul>
+          <li>
+            v. {{[1].version}}
+          </li>
+          <li>
+            {{[1].description}}
+          </li>
+          <li>
+            <b>Properties: </b>
+            <ul>
+              <li>
+                <ins>{{[1].properties.[0].name}}</ins> ({{[1].properties.[0].description}})
+                <br><b>Values: </b>
+                <ul>
+                  <li>
+                    <ins>{{[1].properties.[0].values.[0].value}}</ins>
+                    ({{[1].properties.[0].values.[0].description}})
+                  </li>
+                  <li>
+                    <ins> {{[1].properties.[0].values.[1].value}}</ins>
+                    ({{[1].properties.[0].values.[1].description}})
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <ins>{{[1].properties.[1].name}}</ins> ({{[1].properties.[1].description}})
+                <br><b>Values: </b>
+                <ul>
+                  <li>
+                    <ins>{{[1].properties.[1].values.[0].value}}</ins>
+                    ({{[1].properties.[1].values.[0].description}})
+                  </li>
+                  <li>
+                    <ins> {{[1].properties.[1].values.[1].value}}</ins>
+                    ({{[1].properties.[1].values.[1].description}})
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <br>
+      <hr><br>
+      <div>
+        {{> title data=[2].name big= true}}
+      </div>
+      <div>
+        <ul>
+          <li>
+            v. {{[2].version}}
+          </li>
+          <li>
+            {{[2].description}}
+          </li>
+          <li>
+            <b>Functions: </b>
+            <ul>
+              <li>
+                <ins>{{[2].functions.[0].name}}</ins> ({{[2].functions.[0].description}})
+                <br><b>Parameters: </b>
+                <ul>
+                  <li>
+                    <ins> {{[2].functions.[0].parameters.[0].name}}.</ins>
+                    Type - {{[2].functions.[0].parameters.[0].type}}.
+                    ({{[2].functions.[0].parameters.[0].description}})
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <ins>{{[2].functions.[1].name}}</ins> ({{[2].functions.[1].description}})
+                <br><b>Parameters: </b>
+                <ul>
+                  <li>
+                    <ins> {{[2].functions.[1].parameters.[0].name}}.</ins>
+                    Type - {{[2].functions.[1].parameters.[0].type}}.
+                    ({{[2].functions.[1].parameters.[0].description}})
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      {{/with}}
+  </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
