@@ -1,0 +1,209 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <section>
+      <div>
+        <h1><span class='badge bg-danger'>{{make}}
+            {{model}}</span></h1>
+        <h3><span class='badge bg-primary'>Year:
+            {{year}}. Color:
+            {{color}}.</span></h3>
+      </div>
+      <br /><hr /><br />
+      <div>
+        <h3><span
+            class='badge bg-secondary'
+          >Features</span></h3>
+        <ul>
+          <li>
+            <b>Interior</b>
+            <ul>
+              <li>
+                <b>Seats: </b>
+                material:
+                {{features.interior.seats.material}}, color:
+                {{features.interior.seats.color}},
+                {{#if
+                  features.interior.seats.heated
+                }}heated{{/if}},
+                {{#if
+                  features.interior.seats.ventilated
+                }}ventilated{{/if}}
+              </li>
+              <li>
+                <b>Dashboard: </b>
+                material:
+                {{features.interior.dashboard.material}},
+                color:
+                {{features.interior.dashboard.color}}.
+                Display:
+                {{features.interior.dashboard.display.type}},
+                {{features.interior.dashboard.display.size}}',
+                {{features.interior.dashboard.display.resolution}},
+                {{#if
+                  features.interior.dashboard.display.touchscreen
+                }}touchscreen{{/if}}
+              </li>
+              <li>
+                <b>Audio: </b>
+                {{features.interior.audio.system}},
+                speakers:
+                {{features.interior.audio.speakers}},
+                {{#if features.interior.audio.subwoofer}}
+                  subwoofer
+                {{/if}},
+                {{#if features.interior.audio.bluetooth}}
+                  bluetooth
+                {{/if}},
+                {{#if
+                  features.interior.audio.USB
+                }}USB{{/if}}
+              </li>
+            </ul>
+            <li>
+              <b>Exterior</b>
+              <ul>
+                <li>
+                  <b>Wheels: </b>
+                  size:
+                  {{features.exterior.wheels.size}}, type:
+                  {{features.exterior.wheels.type}}, color:
+                  {{features.exterior.wheels.color}}
+                </li>
+                <li>
+                  <b>Headlights: </b>
+                  type:
+                  {{features.exterior.headlights.type}},
+                  brightness:
+                  {{features.exterior.headlights.brightness}},
+
+                  {{#if
+                    features.exterior.headlights.automatic
+                  }}automatic{{/if}}
+                </li>
+                <li>
+                  <b>Sunroof: </b>
+                  type:
+                  {{features.exterior.sunroof.type}}, size:
+                  {{features.exterior.sunroof.size}},
+
+                  {{#if
+                    features.exterior.sunroof.automatic
+                  }}automatic{{/if}}
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Safety </b>
+              <ul>
+                <li>
+                  <b> Airbags: </b>
+                  {{features.safety.airbags.front}}(front),
+                  {{features.safety.airbags.side}}(side),
+                  {{features.safety.airbags.knee}}(knee),
+                  {{features.safety.airbags.rear}}(rear),
+                </li>
+                <li>
+                  <b>Assistance: </b>
+                  {{#if
+                    features.safety.assistance.blind_spot_monitoring
+                  }}blind spot monitoring, {{/if}}
+                  {{#if
+                    features.safety.assistance.rear_cross_traffic_alert
+                  }}rear cross traffic alert, {{/if}}
+                  {{#if
+                    features.safety.assistance.lane_departure_warning
+                  }}lane departure warning, {{/if}}
+                  {{#if
+                    features.safety.assistance.adaptive_cruise_control
+                  }}adaptive cruise control, {{/if}}
+                  {{#if
+                    features.safety.assistance.collision_warning
+                  }}collision warning{{/if}}
+                </li>
+              </ul>
+            </li>
+          </li>
+        </ul>
+      </div>
+      <br /><hr /><br />
+      <div>
+        <h3><span class='badge bg-info'>Engine</span></h3>
+        <ul>
+          {{#with engine}}
+            <li>
+              Type:
+              {{type}}
+            </li>
+            <li>
+              Displacement:
+              {{displacement}}
+            </li>
+            <li>
+              Horsepower:
+              {{horsepower}}
+            </li>
+            <li>
+              Torque:
+              {{torque}}
+            </li>
+            <li>
+              Transmission: type({{transmission.type}}),
+              gears({{transmission.gears}})
+            </li>
+          {{/with}}
+        </ul>
+      </div>
+      <br /><hr /><br />
+      <div>
+        <h3><span class='badge bg-success'>Fuel economy</span></h3>
+        City:
+        {{fuel_economy.city}}, highway:
+        {{fuel_economy.highway}}, combined:
+        {{fuel_economy.combined}}
+      </div>
+      <br /><hr /><br />
+      <div>
+        <h3><span class='badge bg-warning'>Price</span></h3>
+        <ul>
+          <li><b>Base: </b>
+            {{price.base}}
+          </li>
+          <li><b>Destination: </b>
+            {{price.destination}}
+          </li>
+          <li><b>Options: </b>
+            <ul>
+              <li><b>Navigation: </b>
+                {{price.options.navigation}}
+              </li>
+              <li><b>Moonroof: </b>
+                {{price.options.moonroof}}
+              </li>
+              <li><b>Premium paint: </b>
+                {{price.options.premium_paint}}
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3><span class='badge bg-danger'><b>Total:
+                </b>
+                {{price.total}}</span></h3>
+
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
