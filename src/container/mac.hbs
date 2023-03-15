@@ -1,0 +1,154 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <section>
+      <div>
+        <h1><span
+            class='badge bg-success'
+          >{{name}}</span></h1>
+        ({{description}})
+        <br />
+        {{price}}
+        $
+        <br />
+        <button class='btn btn-primary' type='submit'>
+          {{category}}</button>
+      </div>
+      <br /><hr /><br />
+      <div>
+        <h2><span
+            class='badge bg-warning'
+          >Features</span></h2>
+        <br />
+        {{#with features}}
+          <ul>
+            <b>Processor</b>
+            <li>brand:
+              {{processor.brand}}, model:
+              {{processor.model}}, speed:
+              {{processor.speed}}, cores:
+              {{processor.cores}}, cache:
+              {{processor.cache}}
+            </li>
+          </ul>
+          <ul>
+            <b>Memory</b>
+            <li>
+              type:
+              {{memory.type}}, size:
+              {{memory.size}}, speed:
+              {{memory.speed}}
+            </li>
+          </ul>
+          <ul>
+            <b>Storage</b>
+            <li>
+              type:
+              {{storage.type}}, size:
+              {{storage.size}}
+            </li>
+          </ul>
+          <ul>
+            <b>Display</b>
+            <li>
+              size:
+              {{display.size}}, resolution:
+              {{display.resolution}}, technology:
+              {{medisplayory.technology}}
+              color space:
+              {{display.color_space}}, brightness:
+              {{display.brightness}}, refresh rate:
+              {{display.refresh_rate}}
+            </li>
+          </ul>
+          <ul>
+            <b>Graphics</b>
+            <li>
+              brand:
+              {{graphics.brand}}, model:
+              {{graphics.model}}, memory:
+              {{graphics.memory}}
+            </li>
+          </ul>
+          <ul>
+            <b>Ports</b>
+            <li>
+              type:
+              {{ports.0.type}}, model:
+              {{ports.0.count}}
+              <br />
+              <ins>Features: </ins>
+              <ul>
+                {{#each ports.0.features}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </li>
+            <li>
+              type:
+              {{ports.1.type}}, model:
+              {{ports.1.count}}
+            </li>
+          </ul>
+          <ul>
+            <b>Battery</b>
+            <li>
+              type:
+              {{battery.type}}, capacity:
+              {{battery.capacity}}, life:
+              {{battery.life}}
+            </li>
+          </ul>
+          <ul>
+            <b>Weight</b>
+            <li>
+              {{weight}}
+            </li>
+          </ul>
+          <ul>
+            <b>Dimensions</b>
+            <li>
+              height:
+              {{dimensions.height}}, width:
+              {{dimensions.width}}, depth:
+              {{dimensions.depth}}
+            </li>
+          </ul>
+          <ul>
+            <b>Operating system</b>
+            <li>
+              {{operating_system}}
+            </li>
+          </ul>
+          <div>
+            <b>Accessories</b>
+            <h3><button
+                class='badge bg-info'
+              >{{accessories.0.name}}
+                -
+                {{accessories.0.price}}$</button></h3>
+            <h3><button class='badge bg-info'>
+                {{accessories.1.name}}
+                -
+                {{accessories.1.price}}$</button></h3>
+            <h3><button class='badge bg-info'>
+                {{accessories.2.name}}
+                -
+                {{accessories.2.price}}$</button></h3>
+          </div>
+        {{/with}}
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
