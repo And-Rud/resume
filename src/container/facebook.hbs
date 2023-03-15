@@ -1,0 +1,140 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <section>
+      <div>
+        <h1><span class='badge bg-primary'>{{name}}</span></h1>
+      </div>
+      <br />
+      <hr /><br />
+      <div>
+        <h1><span class='badge bg-primary'>Users</span></h1>
+        <br />
+        {{#with users}}
+        <ul>
+          <li>
+            {{> card data=[0]}}
+            <ul>
+              <b>Friends:</b>
+              <li>
+                {{> card data=[0].friends.[0]}}
+                <br>
+                <ins>Mutual friends:</ins>
+                <ul>
+                  <li>
+                    {{> card data=[0].friends.[0].mutual_friends.[0]}}
+                  </li>
+                </ul>
+              </li>
+              <li>
+                {{> card data=[0].friends.[1]}}
+                <br>
+                <ins>Mutual friends:</ins>
+                <ul>
+                  <li>
+                    {{> card data=[0].friends.[1].mutual_friends.[0]}}
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul>
+              <b>Groups:</b>
+              <li>
+                {{> group data=[0].groups.[0]}}
+                <br>
+                <ins>Members:</ins>
+                <ul>
+                  <li>
+                    {{> card data=[0].groups.[0].members.[0]}}
+                  </li>
+                </ul>
+              </li>
+              <li>
+                {{> group data=[0].groups.[1]}}
+                <br>
+                <ins>Members:</ins>
+                <ul>
+                  <li>
+                    {{> card data=[0].groups.[1].members.[0]}}
+                  </li>
+                  <li>
+                    {{> card data=[0].groups.[1].members.[1]}}
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <br>
+          <li>
+            {{> card data=[1]}}
+            <ul>
+              <b>Friends:</b>
+              <li>
+                {{> card data=[1].friends.[0]}}
+                <br>
+                <ins>Mutual friends:</ins>
+                <ul>
+                  <li>
+                    {{> card data=[1].friends.[0].mutual_friends.[0]}}
+                  </li>
+                  <li>
+                    {{> card data=[1].friends.[0].mutual_friends.[1]}}
+                    <br>
+                    <ins>Mutual friends:</ins>
+                    <ul>
+                      <li>
+                        {{> card data=[1].friends.[0].mutual_friends.[1].mutual_friends.[0]}}
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <ins>Groups:</ins>
+                <ul>
+                  <li>
+                    {{> group data=[1].friends.[0].groups.[0]}}
+                    <br>
+                    <ins>Members:</ins>
+                    <ul>
+                      <li>
+                        {{> card data=[1].friends.[0].groups.[0].members.[0]}}
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    {{> group data=[1].friends.[0].groups.[1]}}
+                    <br>
+                    <ins>Members:</ins>
+                    <ul>
+                      <li>
+                        {{> card data=[1].friends.[0].groups.[1].members.[0]}}
+                      </li>
+                      <li>
+                        {{> card data=[1].friends.[0].groups.[1].members.[1]}}
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </li>
+
+            </ul>
+          </li>
+        </ul>
+        {{/with}}
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
