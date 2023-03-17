@@ -1145,7 +1145,7 @@ router.get('/task22', function (req, res) {
         },
       },
       agreement: {
-        title: 'Terms of use',
+        git: 'Terms of use',
         info: {
           sub_title: 'Check out our requirements',
           detail: {
