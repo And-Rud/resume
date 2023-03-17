@@ -1,0 +1,157 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+  <div class='card'>
+    <div class='card-body'>
+      <div class='card'>
+        <div class='card-body'>
+          <h1>
+            {{heading.main.title}}
+          </h1>
+          <br />
+          <div>
+            {{heading.main.text}}
+          </div>
+          <br />
+          <div>
+            <button class='btn btn-primary'>
+              {{heading.main.button_text.solid}}</button>
+          </div>
+          <br />
+          <div>
+            <button class='btn btn-outline-primary'>
+              {{heading.main.button_text.outline}}</button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class='card'>
+        <div class='card-body'>
+          <h2>
+            {{heading.second.title}}
+          </h2>
+          <br />
+          <div>
+            {{heading.second.text}}
+          </div>
+          <br />
+          <div>
+            <button class='btn btn-secondary'>
+              {{heading.second.button_text.solid}}</button>
+          </div>
+          <br />
+          <div>
+            <button class='btn btn-outline-secondary'>
+              {{heading.second.button_text.outline}}</button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class='card'>
+        <div class='card-body'>
+          <h3>
+            {{heading.subblock.title}}
+          </h3>
+          <br />
+          <div>
+            {{heading.subblock.text}}
+          </div>
+          <br />
+          <div>
+            <button class='btn btn-dark'>
+              {{heading.subblock.button_text.solid}}</button>
+          </div>
+          <br />
+          <div>
+            <button class='btn btn-outline-dark'>
+              {{heading.subblock.button_text.outline}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <hr />
+  <br />
+  <div class='card'>
+    <div class='card-body'>
+      <div class='display-1'>
+        {{nested_display.title}}
+      </div>
+      <div class='card'>
+        <div class='card-body'>
+          <div class='display-4'>
+            {{nested_display.children_display.title}}
+          </div>
+          <br />
+          <div>
+            {{nested_display.children_display.text}}
+          </div>
+          <br />
+          <button class='btn btn-outline-warning'>
+            {{nested_display.children_display.button.text}}</button>
+        </div>
+      </div>
+      <br />
+      <h6>{{nested_display.header_text}}</h6>
+      <br />
+      <button class='btn btn-info'>
+        {{nested_display.button.text}}</button>
+    </div>
+  </div>
+  <br />
+  <hr />
+  <br />
+  <div class='card'>
+    <div class='card-body'>
+      <div class='text-uppercase'>
+        {{paragraph.title}}
+      </div>
+      <br />
+      <div class='text-lowercase'>
+        {{paragraph.text}}
+      </div>
+      <br />
+      <div>
+        <a
+          class='btn btn-link'
+          href='{{paragraph.button.url}}'
+          role='button'
+          target='_blank'
+        >{{paragraph.button.text}}</a>
+      </div>
+      <br />
+      <div class='card'>
+        <div class='card-body'>
+          <ul>
+            <li>
+              <a
+                class='btn btn-link'
+                href='{{paragraph.list_name.0.url}}'
+                role='button'
+                target='_blank'
+              >{{paragraph.list_name.0.text}}</a>
+            </li>
+            <li>
+              <a
+                class='btn btn-link'
+                href='{{paragraph.list_name.1.url}}'
+                role='button'
+                target='_blank'
+              >{{paragraph.list_name.1.text}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
