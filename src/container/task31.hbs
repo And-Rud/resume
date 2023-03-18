@@ -1,0 +1,360 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+  <div>
+    <a class='btn btn-link' href='{{navigation.links.0.href}}' target='_blank'>{{navigation.links.0.text}}</a>
+    <a class='btn btn-link' href='{{navigation.links.1.href}}' target='_blank'>{{navigation.links.1.text}}</a>
+    <a class='btn btn-link' href='{{navigation.links.2.href}}' target='_blank'>{{navigation.links.2.text}}</a>
+    <a class='btn btn-primary' href='{{navigation.button.href}}' target='_blank'>{{navigation.button.text}}</a>
+  </div>
+  <hr /><br />
+  <div>
+    <h1>{{header.title}}</h1>
+    <p>
+      {{header.description}}
+    </p>
+    <a class='btn btn-primary' href='{{header.button.link}}' target='_blank'>{{header.button.text}}</a>
+  </div>
+  <br />
+  <hr /><br />
+  <div>
+    <h2>{{city.title}}</h2>
+    <br>
+    <section class='col-12'>
+      <div class='row g-4'>
+        <div class='col-6'>
+          <div class="card">
+            <img class="card-img-top" src="{{city.cards.0.picture.src}}" alt="{{city.cards.0.picture.alt}}">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{city.cards.0.title}}
+              </h5>
+              <p>{{city.cards.0.description}}</p>
+              <a href="{{city.cards.0.button.href}}" class="btn btn-primary">
+                {{city.cards.0.button.text}}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class='col-6'>
+          <div class="card">
+            <img class="card-img-top" src="{{city.cards.1.picture.src}}" alt="{{city.cards.1.picture.alt}}">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{city.cards.1.title}}
+              </h5>
+              <p>{{city.cards.1.description}}</p>
+              <a href="{{city.cards.1.button.href}}" class="btn btn-primary">
+                {{city.cards.1.button.text}}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class='col-6'>
+          <div class="card">
+            <img class="card-img-top" src="{{city.cards.2.picture.src}}" alt="{{city.cards.2.picture.alt}}">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{city.cards.2.title}}
+              </h5>
+              <p>{{city.cards.2.description}}</p>
+              <a href="{{city.cards.2.button.href}}" class="btn btn-primary">
+                {{city.cards.2.button.text}}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class='col-6'>
+          <div class="card">
+            <img class="card-img-top" src="{{city.cards.3.picture.src}}" alt="{{city.cards.3.picture.alt}}">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{city.cards.3.title}}
+              </h5>
+              <p>{{city.cards.3.description}}</p>
+              <a href="{{city.cards.3.button.href}}" class="btn btn-primary">
+                {{city.cards.3.button.text}}
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+  <br>
+  <hr><br>
+  <div>
+    <h2>{{winner.title}}</h2>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            {{winner.table.head.[0]}}
+          </th>
+          <th>
+            {{winner.table.head.[1]}}
+          </th>
+          <th>
+            {{winner.table.head.[2]}}
+          </th>
+          <th>
+            {{winner.table.head.[3]}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            {{winner.table.user.[0].place}}
+          </td>
+          <td>
+            {{winner.table.user.[0].name}}
+          </td>
+          <td>
+            {{winner.table.user.[0].surname}}
+          </td>
+          <td>
+            {{winner.table.user.[0].nickname}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{winner.table.user.[1].place}}
+          </td>
+          <td>
+            {{winner.table.user.[1].name}}
+          </td>
+          <td>
+            {{winner.table.user.[1].surname}}
+          </td>
+          <td>
+            {{winner.table.user.[1].nickname}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{winner.table.user.[2].place}}
+          </td>
+          <td>
+            {{winner.table.user.[2].name}}
+          </td>
+          <td>
+            {{winner.table.user.[2].surname}}
+          </td>
+          <td>
+            {{winner.table.user.[2].nickname}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <hr><br>
+  <div>
+    <h2>
+      {{gallery.title}}
+    </h2>
+    <br>
+    <div class="col-12">
+      <div class="row g-2">
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              {{gallery.cards.0.name}}
+            </div>
+            <ul class="list-group list-group-flush">
+              {{#each gallery.cards.0.items}}
+              <li class="list-group-item">
+                {{this}}
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              {{gallery.cards.1.name}}
+            </div>
+            <ul class="list-group list-group-flush">
+              {{#each gallery.cards.1.items}}
+              <li class="list-group-item">
+                {{this}}
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              {{gallery.cards.2.name}}
+            </div>
+            <ul class="list-group list-group-flush">
+              {{#each gallery.cards.2.items}}
+              <li class="list-group-item">
+                {{this}}
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <hr><br>
+  <div>
+    <div class="display-2">{{relaxion.title}}</div>
+    <br>
+    <section class='col-12'>
+      <div class='row g-5'>
+        <div class='col-6'>
+          <div class="card text-bg-secondary">
+            <div class="card-header">{{relaxion.cards.0.header}}</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{relaxion.cards.0.title}}
+              </h5>
+              <p>{{relaxion.cards.0.description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class='col-6'>
+          <div class="card text-bg-secondary">
+            <div class="card-header">{{relaxion.cards.1.header}}</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{relaxion.cards.1.title}}
+              </h5>
+              <p>{{relaxion.cards.1.description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class='col-6'>
+          <div class="card text-bg-secondary">
+            <div class="card-header">{{relaxion.cards.2.header}}</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{relaxion.cards.2.title}}
+              </h5>
+              <p>{{relaxion.cards.2.description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class='col-6'>
+          <div class="card text-bg-secondary">
+            <div class="card-header">{{relaxion.cards.3.header}}</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{relaxion.cards.3.title}}
+              </h5>
+              <p>{{relaxion.cards.3.description}}</p>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+  <br>
+  <hr><br>
+  <div>
+    <section class='col-12'>
+      <div class='row g-3'>
+        <div class='col-6'>
+          <div class="card text-center">
+            <div class="card-header">{{rest.cards.0.header}}</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{rest.cards.0.title}}
+              </h5>
+              <p>{{rest.cards.0.description}}</p>
+              <button class="btn btn-primary">{{rest.cards.0.button}}</button>
+            </div>
+            <div class="card-footer">{{rest.cards.0.footer}}</div>
+          </div>
+        </div>
+        <div class='col-6'>
+          <div class="card text-center">
+            <div class="card-header">{{rest.cards.1.header}}</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{rest.cards.1.title}}
+              </h5>
+              <p>{{rest.cards.1.description}}</p>
+              <button class="btn btn-primary">{{rest.cards.1.button}}</button>
+            </div>
+            <div class="card-footer">{{rest.cards.1.footer}}</div>
+          </div>
+        </div>
+    </section>
+  </div>
+  <br>
+  <hr><br>
+  <div>
+    <div class="display-2">{{proposition.title}}</div>
+    <br>
+    <section class='col-12'>
+      <div class='row g-3'>
+        <div class='col-6'>
+          <div class="card text-bg-warning text-white">
+            <div class="card-header">{{proposition.card.0.header}}</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{proposition.card.0.title}}
+              </h5>
+              <p>{{proposition.card.0.description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class='col-6'>
+          <div class="card text-bg-warning text-white">
+            <div class="card-header">{{proposition.card.1.header}}</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{proposition.card.1.title}}
+              </h5>
+              <p>{{proposition.card.1.description}}</p>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+  <br>
+  <hr><br>
+  <div>
+    <h5>{{footer.title}}</h5>
+    <table style="width: 100%;">
+      <tr>
+        <td style="padding: 10px;"> <a class='btn btn-outline-light text-primary' href='{{footer.navigation.0.href}}'
+            target='_blank'>{{footer.navigation.0.text}}</a></td>
+        <td style="padding: 10px;"> <a class='btn btn-outline-dark' href='{{footer.socialMedia.0.link}}'
+            target='_blank'>{{footer.socialMedia.0.name}}</a></td>
+        <td style="padding: 10px;"><a class='btn btn-outline-info' href='{{footer.partners.0.link}}'
+            target='_blank'>{{footer.partners.0.name}}</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;"><a class='btn btn-outline-light text-primary' href='{{footer.navigation.1.href}}'
+            target='_blank'>{{footer.navigation.1.text}}</a></td>
+        <td style="padding: 10px;"> <a class='btn btn-outline-dark' href='{{footer.socialMedia.1.link}}'
+            target='_blank'>{{footer.socialMedia.1.name}}</a></td>
+        <td style="padding: 10px;"><a class='btn btn-outline-info' href='{{footer.partners.1.link}}'
+            target='_blank'>{{footer.partners.1.name}}</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;"><a class='btn btn-outline-light text-primary' href='{{footer.navigation.2.href}}'
+            target='_blank'>{{footer.navigation.2.text}}</a></td>
+        <td style="padding: 10px;"><a class='btn btn-outline-dark' href='{{footer.socialMedia.2.link}}'
+            target='_blank'>{{footer.socialMedia.2.name}}</a></td>
+        <td style="padding: 10px;"><a class='btn btn-outline-info' href='{{footer.partners.2.link}}'
+            target='_blank'>{{footer.partners.2.name}}</a></td>
+      </tr>
+    </table>
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
