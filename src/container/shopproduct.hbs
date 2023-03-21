@@ -1,0 +1,167 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+
+
+  <div class='mb-5'>
+    <ol class='breadcrumb'>
+      <li class='breadcrumb-item nav-item'><a href='{{breadcrumb.0.url}}'>{{breadcrumb.0.name}}</a></li>
+      <li class='breadcrumb-item'><a href='{{breadcrumb.1.url}}'>{{breadcrumb.1.name}}</a></li>
+      <li class='breadcrumb-item'><a href='{{breadcrumb.2.url}}'>{{breadcrumb.2.name}}</a></li>
+      <li class='breadcrumb-item'><a href='{{breadcrumb.3.url}}'>{{breadcrumb.3.name}}</a></li>
+    </ol>
+  </div>
+
+  <div class='row mb-4'>
+    <div class='col-6'>
+      <div class='mb-3'>
+        <img src='{{productData.img}}' class='col-12' />
+      </div>
+
+      <div class='card'>
+        <div class='card-body'>
+          <h3 class='card-title'>
+            {{productData.info.title}}
+          </h3>
+          <p>{{productData.info.about}}</p>
+          <p class='h2 mb-2'>{{productData.info.price}}</p>
+          {{#if productData.info.category.0.isHot}}
+          <span class='badges rounded-pill text-bg-warning'>&nbsp;{{productData.info.category.0.name}}&nbsp;</span>
+          {{/if}}
+          {{#if productData.info.category.1.isNew}}
+          <span class='badges rounded-pill text-bg-primary'>&nbsp;{{productData.info.category.1.name}}&nbsp;</span>
+          {{/if}}
+          {{#if productData.info.category.2.isBonus}}
+          <span class='badges rounded-pill text-bg-info'>&nbsp;{{productData.info.category.2.name}}&nbsp;</span>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class='col-1'>
+
+    </div>
+    <div class='col-5'>
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>
+              {{productData.item.head.[0]}}
+            </th>
+            <th>
+              {{productData.item.head.[1]}}
+            </th>
+            <th>
+              {{productData.item.head.[2]}}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              {{productData.item.body.[0].[0]}}
+            </td>
+            <td>
+              {{productData.item.body.[0].[1]}}
+            </td>
+            <td>
+              {{productData.item.body.[0].[2]}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{productData.item.body.[1].[0]}}
+            </td>
+            <td>
+              {{productData.item.body.[1].[1]}}
+            </td>
+            <td>
+              {{productData.item.body.[1].[2]}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{productData.item.body.[2].[0]}}
+            </td>
+            <td>
+              {{productData.item.body.[2].[1]}}
+            </td>
+            <td>
+              {{productData.item.body.[2].[2]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="card my-4">
+        <div class="card-header">
+          {{productData.param.title}}
+        </div>
+        <ul class="list-group list-group-flush">
+          {{#each productData.param.list}}
+          <li class="list-group-item">
+            {{this}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="alert alert-danger">
+        {{#if productData.alert.isError}}{{productData.alert.text}}{{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <button
+          class="btn col-2 m-2 {{#if productData.actionList.[0].isWarning}}btn-warning{{/if}}">{{productData.actionList.[0].name}}</button>
+        <button
+          class="btn col-2 m-2 {{#if productData.actionList.[1].isError}}btn-outline-danger{{/if}}">{{productData.actionList.[1].name}}</button>
+        <button
+          class="btn col-2 m-2 {{#if productData.actionList.[2].isSuccess}}btn-success{{/if}}">{{productData.actionList.[2].name}}</button>
+        <button
+          class="btn col-2 m-2 {{#if productData.actionList.[3].isGood}}btn-outline-success{{/if}}">{{productData.actionList.[3].name}}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-5">
+    &nbsp;
+  </div>
+  <hr class="my-5">
+  <div class="text-center display-4">
+    {{goodsOtherBlock.title}}
+  </div>
+  <div class='col-12'>
+    <div class='row g-2'>
+      <div class='col-4'>
+        {{> shopcard im=goodsOtherBlock.cards.0.image tit=goodsOtherBlock.cards.[0]
+        des=goodsOtherBlock.cards.0.description}}
+      </div>
+      <div class='col-4'>
+        {{> shopcard im=goodsOtherBlock.cards.1.image tit=goodsOtherBlock.cards.[1]
+        des=goodsOtherBlock.cards.1.description}}
+      </div>
+      <div class='col-4'>
+        {{> shopcard im=goodsOtherBlock.cards.2.image tit=goodsOtherBlock.cards.[2]
+        des=goodsOtherBlock.cards.2.description}}
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  {{> shopaction}}
+
+  <hr class="my-5">
+
+
+
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
