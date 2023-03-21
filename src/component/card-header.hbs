@@ -1,0 +1,32 @@
+{{#if data.isTop}}
+  {{#if data.idNew}}
+    <div class='card-header border-secondary'>
+      {{data.title}}&nbsp;
+      <span
+        class='badges rounded-pill text-bg-danger text-white'
+      >&nbsp;&nbsp;Топ&nbsp;&nbsp;</span>&nbsp;<span
+        class='badges rounded-pill text-bg-success text-white'
+      >&nbsp;&nbsp;Нова&nbsp;&nbsp;</span></div>
+  {{else}}
+    <div class='card-header border-secondary'>
+      {{data.title}}&nbsp;
+      <span
+        class='badges rounded-pill text-bg-danger text-white'
+      >&nbsp;&nbsp;Топ&nbsp;&nbsp;</span>
+    </div>
+  {{/if}}
+{{else}}
+  {{#if data.idNew}}
+    <div class='card-header border-secondary'>
+      {{data.title}}&nbsp;
+      <span
+        class='badges rounded-pill text-bg-success text-white'
+      >&nbsp;&nbsp;Нова&nbsp;&nbsp;</span></div>
+  {{else}}
+
+    <div
+      class='card-header border-secondary'
+    >{{data.title}}</div>
+
+  {{/if}}
+{{/if}}

@@ -12,9 +12,7 @@
         ({{age}},
         {{gender}})
       </div>
-      <br>
-      <hr>
-      <br>
+       <hr class="my-5">
       <div>
         {{> title data='Address'}}
         {{#with address}}
@@ -25,18 +23,14 @@
           {{country}}
         {{/with}}
       </div>
-      <br>
-      <hr>
-      <br>
+     <hr class="my-5">
       <div>
         {{> title data='Education'}}
         {{#with education}}
        Degree: {{[0].degree}}, major: {{[0].major}}, university: {{[0].university}}, graduation: {{[0].graduation}}
          {{/with}}
       </div>
-      <br>
-      <hr>
-      <br>
+      <hr class="my-5">
       <div>
          {{> title data='Work Experience'}}
          {{#with workExperience}}

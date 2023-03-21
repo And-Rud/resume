@@ -9,14 +9,13 @@
       <div>
         <h1><span class='badge bg-primary'>{{name}}</span></h1>
       </div>
-      <br />
-      <hr /><br />
+       <hr class="my-5">
       <div>
         <h1><span class='badge bg-primary'>Users</span></h1>
         <br />
         {{#with users}}
         <ul>
-          <li>
+          <li class="mb-4">
             {{> card data=[0]}}
             <ul>
               <b>Friends:</b>
@@ -68,7 +67,7 @@
               </li>
             </ul>
           </li>
-          <br>
+         
           <li>
             {{> card data=[1]}}
             <ul>
