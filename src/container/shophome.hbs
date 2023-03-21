@@ -5,34 +5,6 @@
 
 <main>
 
-  <div class='row mb-3'>
-    <div class='card'>
-      <div class='nav'>
-        <h3 class='col-8 mt-3'>{{navigation.Logo}}</h3>
-        <div class='nav-item my-3'>
-          <a href='{{navigation.links.0.href}}' class='nav-link'>
-            {{navigation.links.0.text}}
-          </a>
-        </div>
-        <div class='nav-item my-3'>
-          <a href='{{navigation.links.1.href}}' class='nav-link'>
-            {{navigation.links.1.text}}
-          </a>
-        </div>
-        <div class='nav-item my-3'>
-          <a href='{{navigation.links.2.href}}' class='nav-link'>
-            {{navigation.links.2.text}}
-          </a>
-        </div>
-        <div class='nav-item my-3'>
-          <a href='{{navigation.links.0.href}}' class='nav-link disabled'>
-            {{navigation.links.0.text}}
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="pb-4">
     <h3 class="text-center pt-5">{{newsBlock.title}}</h3>
     <section class='col-12'>
@@ -136,58 +108,28 @@
     <div class='col-12'>
       <div class='row g-2'>
         <div class='col-4'>
-          <div class="card">
-            <img class="card-img-top" src="{{goodsBlock.cards.0.image}}" alt="{{goodsBlock.cards.0.title}}">
-            <div class="card-body">
-              {{> card-title data=goodsBlock.cards.[0]}}
-              <p>{{goodsBlock.cards.0.description}}</p>
-            </div>
-          </div>
+          {{> shopcard im=goodsBlock.cards.0.image tit=goodsBlock.cards.[0]
+          des=goodsBlock.cards.0.description}}
         </div>
         <div class='col-4'>
-          <div class="card">
-            <img class="card-img-top" src="{{goodsBlock.cards.1.image}}" alt="{{goodsBlock.cards.1.title}}">
-            <div class="card-body">
-              {{> card-title data=goodsBlock.cards.[1]}}
-              <p>{{goodsBlock.cards.1.description}}</p>
-            </div>
-          </div>
+          {{> shopcard im=goodsBlock.cards.1.image tit=goodsBlock.cards.[1]
+          des=goodsBlock.cards.1.description}}
         </div>
         <div class='col-4'>
-          <div class="card">
-            <img class="card-img-top" src="{{goodsBlock.cards.2.image}}" alt="{{goodsBlock.cards.2.title}}">
-            <div class="card-body">
-              {{> card-title data=goodsBlock.cards.[2]}}
-              <p>{{goodsBlock.cards.2.description}}</p>
-            </div>
-          </div>
+          {{> shopcard im=goodsBlock.cards.2.image tit=goodsBlock.cards.[2]
+          des=goodsBlock.cards.2.description}}
         </div>
         <div class='col-4'>
-          <div class="card">
-            <img class="card-img-top" src="{{goodsBlock.cards.3.image}}" alt="{{goodsBlock.cards.3.title}}">
-            <div class="card-body">
-              {{> card-title data=goodsBlock.cards.[3]}}
-              <p>{{goodsBlock.cards.3.description}}</p>
-            </div>
-          </div>
+          {{> shopcard im=goodsBlock.cards.3.image tit=goodsBlock.cards.[3]
+          des=goodsBlock.cards.3.description}}
         </div>
         <div class='col-4'>
-          <div class="card">
-            <img class="card-img-top" src="{{goodsBlock.cards.4.image}}" alt="{{goodsBlock.cards.4.title}}">
-            <div class="card-body">
-              {{> card-title data=goodsBlock.cards.[4]}}
-              <p>{{goodsBlock.cards.4.description}}</p>
-            </div>
-          </div>
+          {{> shopcard im=goodsBlock.cards.4.image tit=goodsBlock.cards.[4]
+          des=goodsBlock.cards.4.description}}
         </div>
         <div class='col-4'>
-          <div class="card">
-            <img class="card-img-top" src="{{goodsBlock.cards.5.image}}" alt="{{goodsBlock.cards.5.title}}">
-            <div class="card-body">
-              {{> card-title data=goodsBlock.cards.[5]}}
-              <p>{{goodsBlock.cards.5.description}}</p>
-            </div>
-          </div>
+          {{> shopcard im=goodsBlock.cards.5.image tit=goodsBlock.cards.[5]
+          des=goodsBlock.cards.5.description}}
         </div>
       </div>
     </div>
@@ -197,14 +139,14 @@
   <div class='card text-bg-dark'>
     <div class="card-body col-12">
       <div class='row'>
-      <div class='col-7 ms-2 me-5'>
-         <h2>{{subscribe.header}}</h2>
-         <p>{{subscribe.description}}</p>
-      </div>
+        <div class='col-7 ms-2 me-5'>
+          <h2>{{subscribe.header}}</h2>
+          <p>{{subscribe.description}}</p>
+        </div>
         <div class="col-2 py-3">
-           <a href='{{subscribe.buttons.0.link}}' rel="{{subscribe.buttons.0.rel}}" class='btn btn-primary'>
-          {{subscribe.buttons.0.text}}
-        </a>
+          <a href='{{subscribe.buttons.0.link}}' rel="{{subscribe.buttons.0.rel}}" class='btn btn-primary'>
+            {{subscribe.buttons.0.text}}
+          </a>
         </div>
         <div class="col-2 py-3 px-0">
           <a href='{{subscribe.buttons.1.link}}' rel="{{subscribe.buttons.1.rel}}" class='btn btn-primary'>
@@ -213,93 +155,10 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
   <hr class="my-5">
-   <div class='card text-bg-success'>
-    <div class="card-body text-center">
-         <h2>{{service.title}}</h2>
-         <p>{{service.description}}</p>
-           <a href='{{service.buttons.0.link}}' rel="{{service.buttons.0.rel}}" class='btn btn-primary'>
-          {{service.buttons.0.text}}
-        </a>
-    </div>
-    </div>
-   <hr class="my-5">
-   <div class="row nav">
-    <div class="nav-item col-2">
-      <a href='{{footer.0.0.link}}'  class='nav-link'>
-            {{footer.0.0.text}}
-          </a>
-           <a href='{{footer.0.1.link}}'  class='nav-link'>
-            {{footer.0.1.text}}
-          </a>
-           <a href='{{footer.0.2.link}}'  class='nav-link'>
-            {{footer.0.2.text}}
-          </a>
-           <a href='{{footer.0.3.link}}'  class='nav-link disabled'>
-            {{footer.0.3.text}}
-          </a>
-    </div>
-    <div class="nav-item col-2">
-      <a href='{{footer.1.0.link}}'  class='nav-link'>
-            {{footer.1.0.text}}
-          </a>
-           <a href='{{footer.1.1.link}}'  class='nav-link'>
-            {{footer.1.1.text}}
-          </a>
-           <a href='{{footer.1.2.link}}'  class='nav-link'>
-            {{footer.1.2.text}}
-          </a>
-           <a href='{{footer.1.3.link}}'  class='nav-link disabled'>
-            {{footer.1.3.text}}
-          </a>
-    </div>
-    <div class="nav-item col-2">
-      <a href='{{footer.2.0.link}}'  class='nav-link'>
-            {{footer.2.0.text}}
-          </a>
-           <a href='{{footer.2.1.link}}'  class='nav-link'>
-            {{footer.2.1.text}}
-          </a>
-           <a href='{{footer.2.2.link}}'  class='nav-link'>
-            {{footer.2.2.text}}
-          </a>
-           <a href='{{footer.2.3.link}}'  class='nav-link disabled'>
-            {{footer.2.3.text}}
-          </a>
-    </div>
-    <div class="nav-item col-2 px-0">
-      <a href='{{footer.3.0.link}}'  class='nav-link'>
-            {{footer.3.0.text}}
-          </a>
-           <a href='{{footer.3.1.link}}'  class='nav-link'>
-            {{footer.3.1.text}}
-          </a>
-           <a href='{{footer.3.2.link}}'  class='nav-link'>
-            {{footer.3.2.text}}
-          </a>
-           <a href='{{footer.3.3.link}}'  class='nav-link disabled'>
-            {{footer.3.3.text}}
-          </a>
-    </div>
-    <div class="nav-item col-2 px-0">
-      <a href='{{footer.4.0.link}}'  class='nav-link'>
-            {{footer.4.0.text}}
-          </a>
-           <a href='{{footer.4.1.link}}'  class='nav-link'>
-            {{footer.4.1.text}}
-          </a>
-           <a href='{{footer.4.2.link}}'  class='nav-link'>
-            {{footer.4.2.text}}
-          </a>
-           <a href='{{footer.4.3.link}}'  class='nav-link disabled'>
-            {{footer.4.3.text}}
-          </a>
-    </div>
-   </div>
-
-  
- 
+  {{> shopaction}}
+  <hr class="my-5">
 
 </main>
 
