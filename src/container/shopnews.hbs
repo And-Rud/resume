@@ -1,0 +1,88 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+  {{> breadcrumb}}
+
+  <div class="mb-5">
+    <img src="{{newsData.photo}}" class="center">
+  </div>
+  <div class="mb-4">
+    <h3>
+      {{newsData.head.heading}}
+    </h3>
+    <p>
+      {{newsData.head.description}}
+    </p>
+  </div>
+  <div class="mb-4">
+    <h4>
+      {{newsData.body.0.title}}
+    </h4>
+    <p>
+      {{newsData.body.0.text}}
+    </p>
+  </div>
+  <div class="mb-4">
+    <h4>
+      {{newsData.body.1.title}}
+    </h4>
+    <p>
+      {{newsData.body.1.text}}
+    </p>
+  </div>
+  <div class="mb-4">
+    <h4>
+      {{newsData.body.2.title}}
+    </h4>
+    <p>
+      {{newsData.body.2.text}}
+    </p>
+  </div>
+  <div class="mb-4">
+    <h4>
+      {{newsData.body.3.title}}
+    </h4>
+    <p>
+      {{newsData.body.3.text}}
+    </p>
+  </div>
+  <div class="mb-4">
+    <h4>
+      {{newsData.body.4.title}}
+    </h4>
+    <p>
+      {{newsData.body.4.text}}
+    </p>
+  </div>
+
+  <hr class="mb-5">
+
+  <div class="pb-4">
+    <h3 class="text-center pt-5">{{newsOtherBlock.title}}</h3>
+    <section class='col-12'>
+      <div class='row g-2'>
+        <div class='col-3'>
+          {{> shoppost hd=newsOtherBlock.cards.[0] des=newsOtherBlock.cards.0.description}}
+        </div>
+        <div class='col-3'>
+          {{> shoppost hd=newsOtherBlock.cards.[1] des=newsOtherBlock.cards.1.description}}
+        </div>
+        <div class='col-3'>
+          {{> shoppost hd=newsOtherBlock.cards.[2] des=newsOtherBlock.cards.2.description}}
+        </div>
+        <div class='col-3'>
+          {{> shoppost hd=newsOtherBlock.cards.[3] des=newsOtherBlock.cards.3.description}}
+        </div>
+      </div>
+    </section>
+  </div>
+  <hr class="my-5">
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
