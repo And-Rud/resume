@@ -6,62 +6,54 @@
 <main>
   <div class='card'>
     <div class='card-body'>
-      <div class='card'>
+      <div class='card mb-4'>
         <div class='card-body'>
-          <h1>
+          <h1 class='mb-4'>
             {{heading.main.title}}
           </h1>
-          <br />
           <p>
             {{heading.main.text}}
           </p>
-          <div>
+          <div class='mb-4'>
             <button class='btn btn-primary'>
               {{heading.main.button_text.solid}}</button>
           </div>
-          <br />
           <div>
             <button class='btn btn-outline-primary'>
               {{heading.main.button_text.outline}}</button>
           </div>
         </div>
       </div>
-      <br />
-      <div class='card'>
+      <div class='card mb-4'>
         <div class='card-body'>
-          <h2>
+          <h2 class='mb-4'>
             {{heading.second.title}}
           </h2>
-          <br />
           <p>
             {{heading.second.text}}
           </p>
-          <div>
+          <div class='mb-4'>
             <button class='btn btn-secondary'>
               {{heading.second.button_text.solid}}</button>
           </div>
-          <br />
           <div>
             <button class='btn btn-outline-secondary'>
               {{heading.second.button_text.outline}}</button>
           </div>
         </div>
       </div>
-      <br />
       <div class='card'>
         <div class='card-body'>
-          <h3>
+          <h3 class='mb-4'>
             {{heading.subblock.title}}
           </h3>
-          <br />
           <p>
             {{heading.subblock.text}}
           </p>
-          <div>
+          <div class='mb-4'>
             <button class='btn btn-dark'>
               {{heading.subblock.button_text.solid}}</button>
           </div>
-          <br />
           <div>
             <button class='btn btn-outline-dark'>
               {{heading.subblock.button_text.outline}}</button>
@@ -70,20 +62,17 @@
       </div>
     </div>
   </div>
-  <br />
-  <hr />
-  <br />
+  <hr class='my-5' />
   <div class='card'>
     <div class='card-body'>
       <div class='display-1'>
         {{nested_display.title}}
       </div>
-      <div class='card'>
+      <div class='card mb-4'>
         <div class='card-body'>
-          <div class='display-4'>
+          <div class='display-4 mb-4'>
             {{nested_display.children_display.title}}
           </div>
-          <br />
           <p>
             {{nested_display.children_display.text}}
           </p>
@@ -91,16 +80,12 @@
             {{nested_display.children_display.button.text}}</button>
         </div>
       </div>
-      <br />
-      <h6>{{nested_display.header_text}}</h6>
-      <br />
+      <h6 class='mb-4'>{{nested_display.header_text}}</h6>
       <button class='btn btn-info'>
         {{nested_display.button.text}}</button>
     </div>
   </div>
-  <br />
-  <hr />
-  <br />
+  <hr class='my-5' />
   <div class='card'>
     <div class='card-body'>
       <p class='text-uppercase'>
@@ -109,7 +94,7 @@
       <p class='text-lowercase'>
         {{paragraph.text}}
       </p>
-      <div>
+      <div class='mb-4'>
         <a
           class='btn btn-link'
           href='{{paragraph.button.url}}'
@@ -117,7 +102,6 @@
           target='_blank'
         >{{paragraph.button.text}}</a>
       </div>
-      <br />
       <div class='card'>
         <div class='card-body'>
           <ul>

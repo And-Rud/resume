@@ -10,21 +10,17 @@
       <div>
         {{> title data='Program' big= true}}
       </div>
-      <br>
-      <hr><br>
+      <hr class="my-5">
       {{#with excursion}}
       <div>
         {{> title data='Excursion'}}
         <ul>
-
           <li>
             {{name}} ({{location.city}}, {{location.country}}, {{date}})
           </li>
-
         </ul>
       </div>
-      <br>
-      <hr><br>
+       <hr class="my-5">
       <div>
         {{> title data='Program'}}
         {{#with program}}

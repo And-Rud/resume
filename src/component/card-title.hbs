@@ -1,0 +1,35 @@
+{{#if data.isHot}}
+  {{#if data.idNew}}
+    <div class='card-title'>
+      <span style='font-size:25'>{{data.title}}</span>
+      &nbsp;
+      <span
+        class='badges rounded-pill text-bg-warning text-white'
+      >&nbsp;&nbsp;Hot!&nbsp;&nbsp;</span>&nbsp;<span
+        class='badges rounded-pill text-bg-primary text-white'
+      >&nbsp;&nbsp;Новe&nbsp;&nbsp;</span></div>
+  {{else}}
+    <div class='card-title'>
+      <span style='font-size:25'>{{data.title}}</span>
+      &nbsp;
+      <span
+        class='badges rounded-pill text-bg-warning text-white'
+      >&nbsp;&nbsp;Hot!&nbsp;&nbsp;</span>
+    </div>
+  {{/if}}
+{{else}}
+  {{#if data.idNew}}
+    <div class='card-title'>
+      <span style='font-size:25'>{{data.title}}</span>
+      &nbsp;
+      <span
+        class='badges rounded-pill text-bg-primary text-white'
+      >&nbsp;&nbsp;Новe&nbsp;&nbsp;</span></div>
+  {{else}}
+
+    <div class='card-title'>
+      <span style='font-size:25'>{{data.title}}</span>
+      &nbsp;</div>
+
+  {{/if}}
+{{/if}}
