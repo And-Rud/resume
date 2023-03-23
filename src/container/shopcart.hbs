@@ -1,0 +1,107 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+  <div class="mt-5">
+    <div class="row">
+      <div class="col-9">
+        <h1>{{header.title}}</h1>
+      </div>
+      <div class="col-3 ps-5 pt-2 pe-0 text-end">
+        <a href="{{header.button.link}}" class="btn btn-outline-secondary">{{header.button.text}}</a>
+      </div>
+    </div>
+    <hr class="my-5">
+    <div class="mb-3">
+      {{> cartGoodsItem im=goodsBlock.[0].image tit=goodsBlock.[0].name des=goodsBlock.[0].description
+      pri=goodsBlock.[0].price.title val=goodsBlock.[0].price.value am=goodsBlock.[0].amount
+      isp=goodsBlock.[0].buttons.[0].isPrimary tex1=goodsBlock.[0].buttons.[0].text
+      isd=goodsBlock.[0].buttons.[1].isDanger tex2=goodsBlock.[0].buttons.[1].text}}
+    </div>
+    <div class="mb-3">
+      {{> cartGoodsItem im=goodsBlock.[1].image tit=goodsBlock.[1].name des=goodsBlock.[1].description
+      pri=goodsBlock.[1].price.title val=goodsBlock.[1].price.value am=goodsBlock.[1].amount
+      isp=goodsBlock.[1].buttons.[0].isPrimary tex1=goodsBlock.[1].buttons.[0].text
+      isd=goodsBlock.[1].buttons.[1].isDanger tex2=goodsBlock.[1].buttons.[1].text}}
+    </div>
+    <div class="mb-3">
+      {{> cartGoodsItem im=goodsBlock.[2].image tit=goodsBlock.[2].name des=goodsBlock.[2].description
+      pri=goodsBlock.[2].price.title val=goodsBlock.[2].price.value am=goodsBlock.[2].amount
+      isp=goodsBlock.[2].buttons.[0].isPrimary tex1=goodsBlock.[2].buttons.[0].text
+      isd=goodsBlock.[2].buttons.[1].isDanger tex2=goodsBlock.[2].buttons.[1].text}}
+    </div>
+    <div>
+      {{> cartGoodsItem im=goodsBlock.[3].image tit=goodsBlock.[3].name des=goodsBlock.[3].description
+      pri=goodsBlock.[3].price.title val=goodsBlock.[3].price.value am=goodsBlock.[3].amount
+      isp=goodsBlock.[3].buttons.[0].isPrimary tex1=goodsBlock.[3].buttons.[0].text
+      isd=goodsBlock.[3].buttons.[1].isDanger tex2=goodsBlock.[3].buttons.[1].text}}
+    </div>
+    <hr class="my-5">
+    <div class="row">
+      <div class="col-8">
+        <h2 class="mb-3">{{total.title}}</h2>
+        <h2>
+          <p>{{total.amount}}</p>
+        </h2>
+        <p>{{total.delivery}}</p>
+      </div>
+      <div class="col-4 mt-3">
+        <div class="mb-3"><a href="{{total.buttons.[0].link}}"
+            class="btn {{#if total.buttons.[0].isSuccess}}btn-success{{/if}}">{{total.buttons.[0].text}}</a>
+        </div>
+        <div><a href="{{total.buttons.[1].link}}"
+            class="btn btn-{{#if total.buttons.[1].isOutline}}outline{{/if}}-success">{{total.buttons.[1].text}}</a>
+        </div>
+      </div>
+    </div>
+    <hr class="my-5">
+    <div class="mb-4">
+      <h3 class="text-center">{{goodsOtherBlock.title}}</h3>
+    </div>
+    <div>
+      <div class='col-12'>
+        <div class='row g-2'>
+          <div class='col-4'>
+            {{> shopcard im=goodsOtherBlock.cards.0.image tit=goodsOtherBlock.cards.[0]
+            des=goodsOtherBlock.cards.0.description}}
+          </div>
+          <div class='col-4'>
+            {{> shopcard im=goodsOtherBlock.cards.1.image tit=goodsOtherBlock.cards.[1]
+            des=goodsOtherBlock.cards.1.description}}
+          </div>
+          <div class='col-4'>
+            {{> shopcard im=goodsOtherBlock.cards.2.image tit=goodsOtherBlock.cards.[2]
+            des=goodsBgoodsOtherBlocklock.cards.2.description}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-5">
+    <div class="card text-bg-dark">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-8">
+            <h2 class="mb-3">{{subscribe.header}}</h2>
+            <p>{{subscribe.description}}</p>
+          </div>
+          <div class="col-4 mt-3">
+            <div class="mb-3 flex-column text-end">
+              <a href="{{subscribe.buttons.0.link}}" class="btn btn-primary">{{subscribe.buttons.0.text}}</a>
+              <a href="{{subscribe.buttons.1.link}}" class="btn btn-primary">{{subscribe.buttons.1.text}}</a>
+            </div>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
