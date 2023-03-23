@@ -1,0 +1,175 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+	<div>
+		<h2 class="my-5">{{header}}</h2>
+		<ul class="nav nav-tabs mb-3">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#">{{purchase.tabs.[0]}}</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">{{purchase.tabs.[1]}}</a>
+			</li>
+		</ul>
+		<div class="row">
+			<div class="col-4">
+				<div class="form-label">
+					<input class="form-control" placeholder="{{purchase.actionBlock.input.placeholder}}">
+				</div>
+			</div>
+			<div class="col-8 flex-column">
+				<a href="{{purchase.actionBlock.buttons.0.link}}"
+					class="btn btn-{{#if purchase.actionBlock.buttons.0.isSuccess}}success{{/if}}">{{purchase.actionBlock.buttons.0.text}}</a>
+				<a href="{{purchase.actionBlock.buttons.1.link}}"
+					class="btn btn-{{#if purchase.actionBlock.buttons.1.isOutline}}outline{{/if}}-success">{{purchase.actionBlock.buttons.1.text}}</a>
+				<a href="{{purchase.actionBlock.buttons.2.link}}"
+					class="btn btn-{{#if purchase.actionBlock.buttons.2.isDanger}}danger{{/if}}">{{purchase.actionBlock.buttons.2.text}}</a>
+			</div>
+		</div>
+		<hr class="my-4">
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">
+				{{> purchaseItem num=purchase.itemList.0.number stat=purchase.itemList.0.status
+				tit=purchase.itemList.0.amount.title val=purchase.itemList.0.amount.value
+				im=purchase.itemList.0.images.[0] lin=purchase.itemList.0.button.link
+				pri=purchase.itemList.0.button.isPrimary tex=purchase.itemList.0.button.text}}
+			</li>
+			<li class="list-group-item">
+				{{> purchaseItem num=purchase.itemList.1.number stat=purchase.itemList.1.status
+				tit=purchase.itemList.1.amount.title val=purchase.itemList.1.amount.value
+				im=purchase.itemList.1.images.[0] lin=purchase.itemList.1.button.link
+				pri=purchase.itemList.1.button.isPrimary tex=purchase.itemList.1.button.text}}
+			</li>
+			<li class="list-group-item">
+				{{> purchaseItem num=purchase.itemList.2.number stat=purchase.itemList.2.status
+				tit=purchase.itemList.2.amount.title val=purchase.itemList.2.amount.value
+				im=purchase.itemList.2.images.[0] lin=purchase.itemList.2.button.link
+				pri=purchase.itemList.2.button.isPrimary tex=purchase.itemList.2.button.text}}
+			</li>
+			<li class="list-group-item"></li>
+		</ul>
+		<hr class="my-5">
+		<div>
+			<h3 class="mb-3">{{userInfo.title}}</h3>
+			<div class="card mb-3">
+				<div class="card-body">
+					<h5 class="mb-4">
+						{{userInfo.profileData.title}}
+					</h5>
+					<div class="row mb-3">
+						<div class="col-4">
+							<div>{{userInfo.profileData.fullName.surname.title}}</div>
+							<b>{{userInfo.profileData.fullName.surname.value}}</b>
+						</div>
+						<div class="col-4">
+							<div>{{userInfo.profileData.fullName.name.title}}</div>
+							<b>{{userInfo.profileData.fullName.name.value}}</b>
+						</div>
+						<div class="col-4">
+							<div>{{userInfo.profileData.fullName.middleName.title}}</div>
+							<b>{{userInfo.profileData.fullName.middleName.value}}</b>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-4">
+							<div>{{userInfo.profileData.otherInfo.birthday.title}}</div>
+							<b>{{userInfo.profileData.otherInfo.birthday.value}}</b>
+						</div>
+						<div class="col-4">
+							<div>{{userInfo.profileData.otherInfo.sex.title}}</div>
+							<b>{{userInfo.profileData.otherInfo.sex.value}}</b>
+						</div>
+						<div class="col-4">
+							<div>{{userInfo.profileData.otherInfo.language.title}}</div>
+							<b>{{userInfo.profileData.otherInfo.language.value}}</b>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-4">
+							<a href="{{userInfo.buttons.0.link}}"
+								class="btn btn-{{#if userInfo.buttons.0.isPrimary}}primary{{/if}}">{{userInfo.buttons.0.text}}</a>
+						</div>
+						<div class="col-4">
+							<a href="{{userInfo.buttons.1.link}}"
+								class="btn btn-outline-{{#if userInfo.buttons.1.isSecondary}}secondary{{/if}}">{{userInfo.buttons.1.text}}</a>
+						</div>
+						<div class="col-4">
+							<a href="{{userInfo.buttons.2.link}}"
+								class="btn btn-outline-{{#if userInfo.buttons.2.isDanger}}danger{{/if}}">{{userInfo.buttons.2.text}}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-3">
+				<div class="card-body">
+					<h5 class="mb-4">
+						{{userInfo.recipients.title}}
+					</h5>
+					<div class="row mb-3">
+						<div class="col-4">
+							<div>{{userInfo.recipients.users.0.name}}</div>
+							<b>{{userInfo.recipients.users.0.phone}}</b>
+						</div>
+						<div class="col-4">
+							<div>{{userInfo.recipients.users.1.name}}</div>
+							<b>{{userInfo.recipients.users.1.phone}}</b>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-4">
+							<a href="{{userInfo.recipients.users.0.button.link}}"
+								class="btn btn-primary">{{userInfo.recipients.users.0.button.text}}</a>
+						</div>
+						<div class="col-4">
+							<a href="{{userInfo.recipients.users.0.button.link}}"
+								class="btn btn-primary">{{userInfo.recipients.users.0.button.text}}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="mb-4">
+						{{userInfo.contacts.title}}
+					</h5>
+					<div class="row mb-3">
+						<div class="col-4">
+							<div>{{userInfo.contacts.contactData.phone.title}}</div>
+							<b>{{userInfo.contacts.contactData.phone.value}}</b>
+						</div>
+						<div class="col-4">
+							<div>{{userInfo.contacts.contactData.additionalPhone.title}}</div>
+							<b>{{userInfo.contacts.contactData.additionalPhone.value}}</b>
+						</div>
+						<div class="col-4">
+							<div>{{userInfo.contacts.contactData.email.title}}</div>
+							<b>{{userInfo.contacts.contactData.email.value}}</b>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-4">
+							<a href="{{userInfo.contacts.buttons.0.link}}"
+								class="btn btn-{{#if userInfo.contacts.buttons.0.isPrimary}}primary{{/if}}">{{userInfo.contacts.buttons.0.text}}</a>
+						</div>
+						<div class="col-4">
+							<a href="{{userInfo.contacts.buttons.1.link}}"
+								class="btn btn-outline-{{#if userInfo.contacts.buttons.1.isSecondary}}secondary{{/if}}">{{userInfo.contacts.buttons.1.text}}</a>
+						</div>
+						<div class="col-4">
+							<a href="{{userInfo.contacts.buttons.2.link}}"
+								class="btn btn-outline-{{#if userInfo.contacts.buttons.2.isDanger}}danger{{/if}}">{{userInfo.contacts.buttons.2.text}}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
