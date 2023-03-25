@@ -9,7 +9,7 @@
 			<div class="col-8">
 				<h1 class="mb-3">{{formBlock.header}}</h1>
 				<p>{{formBlock.rating.title}}: {{formBlock.rating.value}}</p>
-				<ul class="nav nav-tabs">
+				<ul class="nav nav-tabs nav-fill">
 					<li class="nav-item">
 						<a class="nav-link " aria-current="page" href="#">{{formBlock.actionBlock.tabs.0.text}}</a>
 					</li>
@@ -32,13 +32,59 @@
 						</div>
 					</div>
 				</div>
+				<hr class="my-5">
+				<h2 class="mb-5">{{formBlock.feedbackBlock.title}}</h2>
+				<div class="flex-columu">
+					<a href="{{formBlock.feedbackBlock.buttons.0.link}}"
+						class="btn btn-{{#if formBlock.feedbackBlock.buttons.0.isWarning}}warning{{/if}} me-3">{{formBlock.feedbackBlock.buttons.0.text}}</a>
+					<a href="{{formBlock.feedbackBlock.buttons.1.link}}"
+						class="btn btn-{{#if formBlock.feedbackBlock.buttons.1.isSuccess}}success{{/if}} me-3">{{formBlock.feedbackBlock.buttons.1.text}}</a>
+					<a href="{{formBlock.feedbackBlock.buttons.2.link}}"
+						class="btn btn-{{#if formBlock.feedbackBlock.buttons.2.isDanger}}danger{{/if}}">{{formBlock.feedbackBlock.buttons.2.text}}</a>
+				</div>
 			</div>
 
 			<div class="col-4">
-
+				<div class="card mb-3">
+					<div class="card-body">
+						<img src="{{formBlock.goodsInfo.photo}}">
+						<h5 class="mt-3">{{formBlock.goodsInfo.name}}</h5>
+					</div>
+				</div>
+				<div class="card mb-3">
+					<div class="card-body">
+						<h5>{{formBlock.goodsInfo.price}}</h5>
+						<p class="mb-2">Є в наявності</p>
+						<a href="{{formBlock.goodsInfo.buttons.0.link}}"
+							class="btn btn-{{#if formBlock.goodsInfo.buttons.0.isPrimary}}success{{/if}} me-5 mb-2">{{formBlock.goodsInfo.buttons.0.text}}</a>
+						<a href="{{formBlock.goodsInfo.buttons.1.link}}"
+							class="btn btn-{{#if formBlock.goodsInfo.buttons.1.isSecondary}}secondary{{/if}}">{{formBlock.goodsInfo.buttons.1.text}}</a>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<span>{{formBlock.goodsInfo.seller.title}}:
+							<strong>{{formBlock.goodsInfo.seller.value}}</strong></span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<hr class="my-5">
+	{{> reviewItem titn=reviewList.0.title.userName titc=reviewList.0.title.caption titd=reviewList.0.title.date
+	stit=reviewList.0.reviewBody.seller.title sval=reviewList.0.reviewBody.seller.value
+	rattit=reviewList.0.reviewBody.rating.title ratval=reviewList.0.reviewBody.rating.value
+	tex1=reviewList.0.reviewBody.text.[0] tex2=reviewList.0.reviewBody.text.[1]
+	adtit=reviewList.0.reviewBody.advantages.title adtex=reviewList.0.reviewBody.advantages.text
+	distit=reviewList.0.reviewBody.disadvantages.title distex=reviewList.0.reviewBody.disadvantages.text
+	im=reviewList.0.reviewBody.images coment=reviewList.0.reviewBody.coments}}
+	{{> reviewItem titn=reviewList.1.title.userName titc=reviewList.1.title.caption titd=reviewList.1.title.date
+	stit=reviewList.1.reviewBody.seller.title sval=reviewList.1.reviewBody.seller.value
+	rattit=reviewList.1.reviewBody.rating.title ratval=reviewList.1.reviewBody.rating.value
+	tex1=reviewList.1.reviewBody.text.[0] tex2=reviewList.1.reviewBody.text.[1]
+	adtit=reviewList.1.reviewBody.advantages.title adtex=reviewList.1.reviewBody.advantages.text
+	distit=reviewList.1.reviewBody.disadvantages.title distex=reviewList.1.reviewBody.disadvantages.text
+	im=reviewList.1.reviewBody.images coment=reviewList.1.reviewBody.coments}}
 
 </main>
 

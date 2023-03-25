@@ -1,0 +1,64 @@
+<div class="col-12 mb-5">
+    <div class="row g-2">
+        <div class="card">
+            <div class="card-body ">
+                <div class="card mb-4">
+                    <div class="card-header bg-transparent">
+                        <div class="row">
+                            <div class="col-9">
+                                <h5>{{titn}}</h5>
+                                <p class="mb-1">{{titc}}</p>
+                            </div>
+                            <div class="col-3 text-end mt-3">
+                                <span>{{titd}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">{{stit}}:
+                            {{sval}}
+                        </div>
+                        <p class="mb-3">{{rattit}}:
+                            {{ratval}}</p>
+                        <p class="mb-3">{{tex1}}</p>
+                        <p class="mb-3">{{tex2}}</p>
+                        <div class="mb-3"><strong>{{adtit}}</strong>:
+                            <p>{{adtex}}</p>
+                        </div>
+                        <div class="mb-4"><strong>{{distit}}</strong>:
+                            <p>{{distex}}</p>
+                        </div>
+                        <div>
+                            {{#each im}}
+                            <img src="{{this}}">
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-11">
+                        {{#each coment}}
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row mb-2">
+                                    <div class="col-10">
+                                        <strong>{{userName}}</strong>
+                                    </div>
+                                    <div class="col-2 text-end">
+                                        {{date}}
+                                    </div>
+                                </div>
+                                <div>
+                                    {{text}}
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
