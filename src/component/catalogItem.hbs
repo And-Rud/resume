@@ -1,0 +1,24 @@
+<div class="col-6">
+    <div class="card">
+        <img src="{{im}}">
+        <div class="card-body">
+            {{> card-title data=lis}}
+            {{> delivery data=lis}}
+            <h5 class="my-3">{{nam}}</h5>
+            <div class="mb-3">{{ream}} {{rete}}</div>
+            <h5 class="mb-3">{{pri}}</h5>
+            <div class="mb-3">{{deli}}</div>
+            <div class="mb-2">
+                <a href="{{lin1}}" class="btn btn-{{#if ispri}}primary{{/if}}">{{buttex1}}</a>
+            </div>
+            <div class="mb-3">
+                <a href="{{lin2}}" class="btn btn-{{#if issec}}secondary{{/if}}">{{buttex2}}</a>
+            </div>
+            <ul class="mb-1">
+                {{#each char}}
+                <li>{{title}}: {{value}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

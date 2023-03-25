@@ -1,0 +1,213 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+{{> breadcrumb}}
+<main>
+	<h1 class="mb-4">{{header}}</h1>
+	<div class="row mb-5">
+		<div class="col-3">
+			<select class="form-select">
+				<option selected>{{sortBlock.0.placeholder}}</option>
+				<option value="{{sortBlock.0.options.0.value}}">{{sortBlock.0.options.0.text}}</option>
+				<option value="{{sortBlock.0.options.1.value}}">{{sortBlock.0.options.1.text}}</option>
+			</select>
+		</div>
+		<div class="col-3">
+			<select class="form-select">
+				<option selected>{{sortBlock.1.placeholder}}</option>
+				<option value="{{sortBlock.1.options.0.value}}">{{sortBlock.1.options.0.text}}</option>
+				<option value="{{sortBlock.1.options.1.value}}">{{sortBlock.1.options.1.text}}</option>
+			</select>
+		</div>
+		<div class="col-3">
+			<select class="form-select">
+				<option selected>{{sortBlock.2.placeholder}}</option>
+				<option value="{{sortBlock.2.options.0.value}}">{{sortBlock.2.options.0.text}}</option>
+				<option value="{{sortBlock.2.options.1.value}}">{{sortBlock.2.options.1.text}}</option>
+			</select>
+		</div>
+	</div>
+	<div class="col-12">
+		<div class="row">
+			<div class="col-4">
+				<div class="card">
+					<div class="card-body">
+						<div class="mb-2">{{filterBlock.sellers.title}}</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.sellers.list.[0].value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.sellers.list.[1].value}}</label>
+						</div>
+						<hr class="my-3">
+						<div class="mb-2">{{filterBlock.brands.title}}</div>
+						<input class="form-control mb-3" placeholder="{{filterBlock.brands.input.placeholder}}">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.brands.options.[0].value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.brands.options.[1].value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.brands.options.[2].value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.brands.options.[3].value}}</label>
+						</div>
+						<hr class="my-3">
+						<div class="mb-2">{{filterBlock.price.title}}</div>
+						<div class="row">
+							<div class="col-4">
+								<input class="form-control mb-3" placeholder="{{filterBlock.price.range.from}}">
+							</div>
+							<div class="col-4">
+								<input class="form-control mb-3" placeholder="{{filterBlock.price.range.to}}">
+							</div>
+							<div class="col-4">
+								<a href="{{filterBlock.price.button.link}}"
+									class="btn btn-outline-secondary px-3">{{filterBlock.price.button.text}}</a>
+							</div>
+						</div>
+						<hr class="my-3">
+						<div class="mb-2">{{filterBlock.filterList.0.title}}</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[0].options.0.value}}</label>
+						</div>
+						<hr class="my-3">
+						<div class="mb-2">{{filterBlock.filterList.1.title}}</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[1].options.0.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[1].options.1.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[1].options.2.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[1].options.3.value}}</label>
+						</div>
+						<hr class="my-3">
+						<div class="mb-2">{{filterBlock.filterList.2.title}}</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[2].options.0.value}}''</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[2].options.1.value}}''</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[2].options.2.value}}''</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[2].options.3.value}}''</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[2].options.4.value}}''</label>
+						</div>
+						<hr class="my-3">
+						<div class="mb-2">{{filterBlock.filterList.3.title}}</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[3].options.0.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[3].options.1.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[3].options.2.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[3].options.3.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[3].options.4.value}}</label>
+						</div>
+						<hr class="my-3">
+						<div class="mb-2">{{filterBlock.filterList.4.title}}</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[4].options.0.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[4].options.1.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[4].options.2.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[4].options.3.value}}</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox">
+							<label class="form-check-label">{{filterBlock.filterList.[4].options.4.value}}</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-8">
+				<div class="row g-2">
+					{{> catalogItem im=goodsList.0.img nam=goodsList.0.name lis=goodsList.[0]
+					ream=goodsList.0.review.amount rete=goodsList.0.review.text pri=goodsList.0.price
+					deli=goodsList.0.delivery lin1=goodsList.0.buttons.0.link ispri=goodsList.0.buttons.0.isPrimary
+					buttex1=goodsList.0.buttons.0.text lin2=goodsList.0.buttons.1.link
+					issec=goodsList.0.buttons.1.isSecondary buttex2=goodsList.0.buttons.1.text
+					char=goodsList.0.characteristics}}
+					{{> catalogItem im=goodsList.1.img nam=goodsList.1.name lis=goodsList.[1]
+					ream=goodsList.1.review.amount rete=goodsList.1.review.text pri=goodsList.1.price
+					deli=goodsList.1.delivery lin1=goodsList.1.buttons.0.link ispri=goodsList.1.buttons.0.isPrimary
+					buttex1=goodsList.1.buttons.0.text lin2=goodsList.1.buttons.1.link
+					issec=goodsList.1.buttons.1.isSecondary buttex2=goodsList.1.buttons.1.text
+					char=goodsList.1.characteristics}}
+					{{> catalogItem im=goodsList.2.img nam=goodsList.2.name lis=goodsList.[2]
+					ream=goodsList.2.review.amount rete=goodsList.2.review.text pri=goodsList.2.price
+					deli=goodsList.2.delivery lin1=goodsList.2.buttons.0.link ispri=goodsList.2.buttons.0.isPrimary
+					buttex1=goodsList.2.buttons.0.text lin2=goodsList.2.buttons.1.link
+					issec=goodsList.2.buttons.1.isSecondary buttex2=goodsList.2.buttons.1.text
+					char=goodsList.2.characteristics}}
+					{{> catalogItem im=goodsList.3.img nam=goodsList.3.name lis=goodsList.[3]
+					ream=goodsList.3.review.amount rete=goodsList.3.review.text pri=goodsList.3.price
+					deli=goodsList.3.delivery lin1=goodsList.3.buttons.0.link ispri=goodsList.3.buttons.0.isPrimary
+					buttex1=goodsList.3.buttons.0.text lin2=goodsList.3.buttons.1.link
+					issec=goodsList.3.buttons.1.isSecondary buttex2=goodsList.3.buttons.1.text
+					char=goodsList.3.characteristics}}
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+</main>
+{{> shopaction}}
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

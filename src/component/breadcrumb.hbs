@@ -2,7 +2,8 @@
     <ol class='breadcrumb'>
         <li class='breadcrumb-item nav-item'><a href='{{breadcrumb.0.url}}'>{{breadcrumb.0.name}}</a></li>
         <li class='breadcrumb-item'><a href='{{breadcrumb.1.url}}'>{{breadcrumb.1.name}}</a></li>
-        <li class='breadcrumb-item'><a href='{{breadcrumb.2.url}}'>{{breadcrumb.2.name}}</a></li>
-        <li class='breadcrumb-item'><a href='{{breadcrumb.3.url}}'>{{breadcrumb.3.name}}</a></li>
+        <li class='breadcrumb-item'><a href='{{breadcrumb.2.url}}' {{#unless
+                breadcrumb.2.url}}style="pointer-events: none" class="text-secondary" {{/unless}}>{{breadcrumb.2.name}}
+            </a></li>
     </ol>
 </div>
