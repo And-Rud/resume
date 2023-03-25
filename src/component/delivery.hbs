@@ -1,0 +1,32 @@
+{{#if data.isFast}}
+{{#if data.isFree}}
+<div class='card-title'>
+    <span style='font-size:25'>{{data.title}}</span>
+    &nbsp;
+    <span class='badge text-bg-success text-white mb-2'>&nbsp;Швидка
+        доставка&nbsp;</span><br><span class='badge text-bg-secondary text-white'>&nbsp;Безкоштовна
+        доставка&nbsp;</span>
+</div>
+{{else}}
+<div class='card-title'>
+    <span style='font-size:25'>{{data.title}}</span>
+    &nbsp;
+    <span class='badge text-bg-success text-white'>&nbsp;Швидка доставка&nbsp;</span>
+</div>
+{{/if}}
+{{else}}
+{{#if data.isFree}}
+<div class='card-title'>
+    <span style='font-size:25'>{{data.title}}</span>
+    &nbsp;
+    <span class='badge text-bg-secondary text-white'>&nbsp;Безкоштовна доставкаe&nbsp;</span>
+</div>
+{{else}}
+
+<div class='card-title'>
+    <span style='font-size:25'>{{data.title}}</span>
+    &nbsp;
+</div>
+
+{{/if}}
+{{/if}}
