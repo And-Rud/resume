@@ -1,0 +1,49 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+	<div class="col-12">
+		<div class="row g-2">
+			<div class="col-8">
+				<h1 class="mb-3">{{formBlock.header}}</h1>
+				<p>{{formBlock.rating.title}}: {{formBlock.rating.value}}</p>
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link " aria-current="page" href="#">{{formBlock.actionBlock.tabs.0.text}}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">{{formBlock.actionBlock.tabs.1.text}}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link {{#if formBlock.actionBlock.tabs.2.isActive}}active{{/if}}"
+							href="#">{{formBlock.actionBlock.tabs.2.text}}</a>
+					</li>
+				</ul>
+				<hr class="my-5">
+				<div class="card">
+					<div class="card-body flex-column">
+						<div class="row">
+							<div class="col-8 py-1">{{formBlock.actionBlock.field.placeholder}}</div>
+							<div class="col-4 text-end"><a class="btn btn-secondary"
+									href="{{formBlock.actionBlock.field.button.link}}">{{formBlock.actionBlock.field.button.text}}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+
+			</div>
+		</div>
+	</div>
+
+</main>
+
+{{> shopaction}}
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
