@@ -1,17 +1,55 @@
-{{! 
-Це код container файлу для index сторінки, 
+{{!
+Це код container файлу для index сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
- }}
-
-
-<img src="https://picsum.photos/200/100">
-
-  
-</img>
-
-
-
-{{! 
-    Цей код містить лише те, що буде виводитись в <body>
-    Адже наш layout/default.hbs має вже структуру HTML
 }}
+
+
+<main>
+    <div class="card mb-5">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-9 p-1 ps-3">
+                    <h5>Andrii Rudyk</h5>
+                </div>
+                <div class="col-3 text-end p-1 pe-3">
+                    <h5>Resume Project</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 class="mb-3">Список сторінок</h3>
+    <p class="mb-5">Це мій особистий проєкт резюме. Створений за допомогою bootstrap.</p>
+    <div class="col-3 mb-2"><a href="/summary" class="btn btn-primary">Summary</a></div>
+    <div class="col-3 mb-2"><a href="/skills" class="btn btn-primary">Skills</a></div>
+    <div class="col-3 mb-2"><a href="/education" class="btn btn-primary">Education</a></div>
+    <div class="col-3 mb-2"><a href="/work" class="btn btn-primary">Work</a></div>
+    <div class="col-3 mb-2"><a href="/person" class="btn btn-primary">Person</a></div>
+    <div class="col-3 mb-2"><a href="/bio" class="btn btn-primary">Bio</a></div>
+    <div class="col-3 mb-2"><a href="/web" class="btn btn-primary">Web</a></div>
+    <div class="col-3 mb-2"><a href="/js" class="btn btn-primary">JS</a></div>
+    <div class="col-3 mb-2"><a href="/car" class="btn btn-primary">Car</a></div>
+    <div class="col-3 mb-2"><a href="/mac" class="btn btn-primary">Mac</a></div>
+    <div class="col-3 mb-2"><a href="/facebook" class="btn btn-primary">Facebook</a></div>
+    <div class="col-3 mb-2"><a href="/task21" class="btn btn-primary">Task21</a></div>
+    <div class="col-3 mb-2"><a href="/task22" class="btn btn-primary">Task22</a></div>
+    <div class="col-3 mb-2"><a href="/task31" class="btn btn-primary">Task31</a></div>
+    <div class="col-3 mb-2"><a href="/shophome" class="btn btn-primary">Shophome</a></div>
+    <div class="col-3 mb-2"><a href="/shopproduct" class="btn btn-primary">Shopproduct</a></div>
+    <div class="col-3 mb-2"><a href="/shopnews" class="btn btn-primary">Shopnews</a></div>
+    <div class="col-3 mb-2"><a href="/shoporder" class="btn btn-primary">Shoporder</a></div>
+    <div class="col-3 mb-2"><a href="/shopcart" class="btn btn-primary">Shopcart</a></div>
+    <div class="col-3 mb-2"><a href="/shopprofile" class="btn btn-primary">Shopprofile</a></div>
+    <div class="col-3 mb-2"><a href="/shopreview" class="btn btn-primary">Shopreview</a></div>
+    <div class="col-3 mb-2"><a href="/shopcatalog" class="btn btn-primary">Shopcatalog</a></div>
+
+
+
+</main>
+
+
+{{!
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    }}

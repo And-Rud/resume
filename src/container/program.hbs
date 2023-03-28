@@ -20,14 +20,14 @@
           </li>
         </ul>
       </div>
-       <hr class="my-5">
+      <hr class="my-5">
       <div>
         {{> title data='Program'}}
         {{#with program}}
         <ul>
           <li>
             {{[0].name}} (type - {{[0].type}}), {{[0].duration}} h.
-            <br> <b> Details: </b>
+            <div> Details: </div>
             <ul>
 
               <li>
@@ -59,7 +59,7 @@
           </li>
           <li>
             {{[1].name}} (type - {{[1].type}}), {{[1].duration}} h.
-            <br> <b> Details: </b>
+            <div> Details: </div>
             <ul>
               <li>
                 <b>Venue:</b> {{[1].details.venue.name}} ({{[1].details.venue.location.address}},

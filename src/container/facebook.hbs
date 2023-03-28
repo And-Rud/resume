@@ -9,7 +9,7 @@
       <div>
         <h1><span class='badge bg-primary'>{{name}}</span></h1>
       </div>
-       <hr class="my-5">
+      <hr class="my-5">
       <div>
         <h1><span class='badge bg-primary'>Users</span></h1>
         <br />
@@ -21,8 +21,7 @@
               <b>Friends:</b>
               <li>
                 {{> card data=[0].friends.[0]}}
-                <br>
-                <ins>Mutual friends:</ins>
+                <div class="text-decoration-underline">Mutual friends:</div>
                 <ul>
                   <li>
                     {{> card data=[0].friends.[0].mutual_friends.[0]}}
@@ -31,8 +30,7 @@
               </li>
               <li>
                 {{> card data=[0].friends.[1]}}
-                <br>
-                <ins>Mutual friends:</ins>
+                <div class="text-decoration-underline">Mutual friends:</div>
                 <ul>
                   <li>
                     {{> card data=[0].friends.[1].mutual_friends.[0]}}
@@ -44,8 +42,7 @@
               <b>Groups:</b>
               <li>
                 {{> group data=[0].groups.[0]}}
-                <br>
-                <ins>Members:</ins>
+                <div class="text-decoration-underline">Members:</div>
                 <ul>
                   <li>
                     {{> card data=[0].groups.[0].members.[0]}}
@@ -54,8 +51,7 @@
               </li>
               <li>
                 {{> group data=[0].groups.[1]}}
-                <br>
-                <ins>Members:</ins>
+                <div class="text-decoration-underline">Members:</div>
                 <ul>
                   <li>
                     {{> card data=[0].groups.[1].members.[0]}}
@@ -67,23 +63,21 @@
               </li>
             </ul>
           </li>
-         
+
           <li>
             {{> card data=[1]}}
             <ul>
               <b>Friends:</b>
               <li>
                 {{> card data=[1].friends.[0]}}
-                <br>
-                <ins>Mutual friends:</ins>
+                <div class="text-decoration-underline">Mutual friends:</div>
                 <ul>
                   <li>
                     {{> card data=[1].friends.[0].mutual_friends.[0]}}
                   </li>
                   <li>
                     {{> card data=[1].friends.[0].mutual_friends.[1]}}
-                    <br>
-                    <ins>Mutual friends:</ins>
+                    <div class="text-decoration-underline">Mutual friends:</div>
                     <ul>
                       <li>
                         {{> card data=[1].friends.[0].mutual_friends.[1].mutual_friends.[0]}}
@@ -97,8 +91,7 @@
                 <ul>
                   <li>
                     {{> group data=[1].friends.[0].groups.[0]}}
-                    <br>
-                    <ins>Members:</ins>
+                    <div class="text-decoration-underline">Members:</div>
                     <ul>
                       <li>
                         {{> card data=[1].friends.[0].groups.[0].members.[0]}}
@@ -107,8 +100,7 @@
                   </li>
                   <li>
                     {{> group data=[1].friends.[0].groups.[1]}}
-                    <br>
-                    <ins>Members:</ins>
+                    <div class="text-decoration-underline">Members:</div>
                     <ul>
                       <li>
                         {{> card data=[1].friends.[0].groups.[1].members.[0]}}
